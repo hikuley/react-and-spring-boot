@@ -20,6 +20,10 @@ public class ExchangeService extends BaseService {
 
     private final Logger log = LoggerFactory.getLogger(ExchangeService.class);
 
+    /*
+    *  This method usages to get the currency rate from external REST api.
+    *
+    * */
 
     public BaseResponse rate(RateRequest rateRequest) throws BaseException {
 
