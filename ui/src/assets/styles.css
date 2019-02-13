@@ -1,0 +1,21 @@
+body {
+    /*overflow-x: hidden;*/
+}
+
+.main-container {
+    padding: 20px;
+}
+
+.custom-form {
+    border: solid 1px #eaeefb;
+    border-radius: 4px;
+    transition: .2s;
+    margin: 12px 0px 12px 0px;
+    padding: 16px 16px 0px;
+
+}
+
+.custom-pagination {
+    margin: 10px;
+    text-align: center;
+}
