@@ -1,7 +1,7 @@
 
 ## Technical Assignment
 
-This project includes two part of module, first module is called 'api', second module is called 'ui'
+This project includes two part of module, first module is called '**api**', second module is called '**ui**'
 
 
 ### How to run Application? 
