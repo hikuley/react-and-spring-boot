@@ -1,32 +1,51 @@
-### How to run Application? ###
 
-A single command to run the frontend & backend below.
+## Technical Assignment
 
-```sh
-$ docker-compose up --build
+This project includes two part of module, first module is called 'api', second module is called 'ui'
+
+
+### How to run Application? 
+
+##### Environment
+1. Java version 8
+2. Apache Maven version 3
+3. npm 
+
+#### API  module build and run
 ```
-after if you want to access to ui module
-```sh
-http://localhost:300
+$ cd ./api
 ```
-to check rest api 
-```sh
-http://localhost:3001/api
+```
+$ mvn spring-boot:run
+```
+#### UI  modul build and run
+```
+$ cd ./ui
+```
+```
+$ npm install
+```
+```
+$ npm start
 ```
 
-This project includes two part of module, first module is called 'server', second module is called 'ui'
-I used many kinds of external libraries for server module and ui module.
 
-* server
-1. node-cache: I preferred this library because each request must be cached according to challenge requirements.
-2. babel: I coded server with es6 and for transformation.
-3. node-fetch: Instead of implementing XMLHttpRequest in Node.js to run browser-specific
-4. babel-plugin-transform-decorators-legacy plugin: 
-5. babel-plugin-transform-object-rest-spread plugin: to use feature of the es6 spread 
+### Which I used libraries and feutures while developing
 
-* ui
-1. redux : I prefer redux to manage state of the each react component.
-2. redux-saga : I prefer redux-saga to manage actions of the reduxt.
+#### API Module 
+This is a simple spring-boot application, and I used some libraries and feutures.
 
-### The time you spent on the challenge ###
-I spent 3 days on the challange, but If I had more time, I was able to write test cases for ui methods and server methods and I could make more component on the ui module.  
+1. spring-boot
+2. spring-mvc
+2. spring-data
+3. hibernate
+4. Junit-test
+5. springfox-swagger 
+
+### UI Module 
+This is a simple react-js application, and I used some libraries and feutures.
+
+1. react-js 
+2. redux.js 
+2. redux-saga.js 
+3. element-ui 
