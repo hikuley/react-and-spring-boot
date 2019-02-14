@@ -18,7 +18,10 @@ $ cd ./api
 ```
 $ mvn spring-boot:run
 ```
-#### UI  modul build and run
+You can check api url below link.
+##### API url: http://localhost:8080/swagger-ui.html
+
+#### UI  module build and run
 ```
 $ cd ./ui
 ```
@@ -28,7 +31,8 @@ $ npm install
 ```
 $ npm start
 ```
-
+You can check api url below link.
+##### UI url: http://localhost:3000
 
 ### Which I used libraries and feutures while developing
 
