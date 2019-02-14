@@ -31,7 +31,7 @@ $ npm install
 ```
 $ npm start
 ```
-You can check api url below link.
+You can check ui url below link.
 ##### UI url: http://localhost:3000
 
 ### Which I used libraries and feutures while developing
