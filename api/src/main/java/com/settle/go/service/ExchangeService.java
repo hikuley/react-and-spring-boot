@@ -21,11 +21,13 @@ public class ExchangeService extends BaseService {
 
     private final Logger log = LoggerFactory.getLogger(ExchangeService.class);
 
-    /*
-     *  This method usages to get the currency rate from external REST api.
+    /**
+     * This method usages to get the currency rate from external REST api.
      *
-     * */
-
+     * @param rateRequest ->sourceCurrency,buyCurrency
+     * @return
+     * @throws BaseException
+     */
     public BaseResponse rate(RateRequest rateRequest) throws BaseException {
 
         log.info("Began the exchange rate method with a request {}", rateRequest);
