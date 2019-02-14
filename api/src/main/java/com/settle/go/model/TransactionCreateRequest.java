@@ -1,20 +1,32 @@
 package com.settle.go.model;
 
 
+import java.math.BigDecimal;
+
 public class TransactionCreateRequest {
 
-    private Double sellAmount;
+    private BigDecimal sellAmount;
     private String sellCurrency;
 
     private String buyCurrency;
-    private Double rate;
+    private BigDecimal rate;
 
+    public TransactionCreateRequest() {
 
-    public Double getSellAmount() {
+    }
+
+    public TransactionCreateRequest(BigDecimal sellAmount, String sellCurrency, String buyCurrency, BigDecimal rate) {
+        this.sellAmount = sellAmount;
+        this.sellCurrency = sellCurrency;
+        this.buyCurrency = buyCurrency;
+        this.rate = rate;
+    }
+
+    public BigDecimal getSellAmount() {
         return sellAmount;
     }
 
-    public void setSellAmount(Double sellAmount) {
+    public void setSellAmount(BigDecimal sellAmount) {
         this.sellAmount = sellAmount;
     }
 
@@ -34,11 +46,11 @@ public class TransactionCreateRequest {
         this.buyCurrency = buyCurrency.toUpperCase();
     }
 
-    public Double getRate() {
+    public BigDecimal getRate() {
         return rate;
     }
 
-    public void setRate(Double rate) {
+    public void setRate(BigDecimal rate) {
         this.rate = rate;
     }
 }

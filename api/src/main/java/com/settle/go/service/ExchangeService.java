@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,9 +22,9 @@ public class ExchangeService extends BaseService {
     private final Logger log = LoggerFactory.getLogger(ExchangeService.class);
 
     /*
-    *  This method usages to get the currency rate from external REST api.
-    *
-    * */
+     *  This method usages to get the currency rate from external REST api.
+     *
+     * */
 
     public BaseResponse rate(RateRequest rateRequest) throws BaseException {
 
@@ -52,7 +53,7 @@ public class ExchangeService extends BaseService {
 
         Map.Entry<String, Double> responseRate = response.getQuotes().entrySet().iterator().next();
 
-        Double rateValue = responseRate.getValue();
+        BigDecimal rateValue = BigDecimal.valueOf(responseRate.getValue());
 
         Rate rate = new Rate(sourceCurrency, rateValue);
 

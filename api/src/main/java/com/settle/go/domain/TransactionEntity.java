@@ -1,27 +1,36 @@
 package com.settle.go.domain;
 
 import javax.persistence.Entity;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity(name = "Transaction")
 public class TransactionEntity extends BaseEntity {
 
-    private Double sellAmount;
+    private BigDecimal sellAmount;
     private String sellCurrency;
 
-    private Double buyAmount;
+    private BigDecimal buyAmount;
     private String buyCurrency;
 
 
     public TransactionEntity() {
+
+
     }
 
+    public TransactionEntity(BigDecimal sellAmount, String sellCurrency, BigDecimal buyAmount, String buyCurrency) {
+        this.sellAmount = sellAmount;
+        this.sellCurrency = sellCurrency;
+        this.buyAmount = buyAmount;
+        this.buyCurrency = buyCurrency;
+    }
 
-    public Double getSellAmount() {
+    public BigDecimal getSellAmount() {
         return sellAmount;
     }
 
-    public void setSellAmount(Double sellAmount) {
+    public void setSellAmount(BigDecimal sellAmount) {
         this.sellAmount = sellAmount;
     }
 
@@ -33,11 +42,11 @@ public class TransactionEntity extends BaseEntity {
         this.sellCurrency = sellCurrency;
     }
 
-    public Double getBuyAmount() {
+    public BigDecimal getBuyAmount() {
         return buyAmount;
     }
 
-    public void setBuyAmount(Double buyAmount) {
+    public void setBuyAmount(BigDecimal buyAmount) {
         this.buyAmount = buyAmount;
     }
 
@@ -48,7 +57,6 @@ public class TransactionEntity extends BaseEntity {
     public void setBuyCurrency(String buyCurrency) {
         this.buyCurrency = buyCurrency;
     }
-
 
     @Override
     public boolean equals(Object o) {

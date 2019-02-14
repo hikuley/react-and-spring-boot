@@ -12,8 +12,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * This class allows to manage transactions by providing CRUD operations
+ */
 @Service
 public class TransactionService extends BaseService {
 
@@ -22,27 +26,30 @@ public class TransactionService extends BaseService {
 
     private TransactionRepository transactionRepository;
 
-    private ModelMapper modelMapper;
-
     @Autowired
-    public TransactionService(TransactionRepository transactionRepository, ModelMapper modelMapper) {
+    public TransactionService(TransactionRepository transactionRepository) {
         this.transactionRepository = transactionRepository;
-        this.modelMapper = modelMapper;
     }
 
-    /*
-     *
+
+    /**
      * This method usages to create one Transaction record.
      *
-     * */
+     * @param request Transaction request
+     * @return BaseResponse
+     */
 
     public BaseResponse create(TransactionCreateRequest request) {
 
         log.info("Began the transaction create method with a request {}", request);
 
-        TransactionEntity entity = modelMapper.map(request, TransactionEntity.class);
+        TransactionEntity entity = new TransactionEntity(request.getSellAmount(), request.getSellCurrency(), new BigDecimal(0), request.getBuyCurrency());
 
-        entity.setBuyAmount(request.getRate() * request.getSellAmount());
+        BigDecimal sellAmount = request.getSellAmount();
+
+        BigDecimal rate = request.getRate();
+
+        entity.setBuyAmount(sellAmount.multiply(rate));
 
         log.info("Calculated buy currency:", entity.getBuyAmount());
 
@@ -53,17 +60,18 @@ public class TransactionService extends BaseService {
         return new BaseResponse.Builder()
                 .withId(String.valueOf(savedTransaction.getId()))
                 .withSuccess(true)
-                .withData(request)
+                .withData(savedTransaction)
                 .withResponseMessage("Transaction created.")
                 .withTimestamp(System.currentTimeMillis())
                 .build();
     }
 
-    /*
-     *
+    /**
      * This method usages to get list of transaction with paging.
      *
-     * */
+     * @param pageable
+     * @return BaseResponse
+     */
 
     public BaseResponse list(Pageable pageable) {
 

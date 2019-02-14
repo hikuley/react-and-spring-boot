@@ -6,6 +6,15 @@ public class RateRequest {
 
     private String buyCurrency;
 
+    public RateRequest() {
+
+    }
+
+    public RateRequest(String sourceCurrency, String buyCurrency) {
+        this.sourceCurrency = sourceCurrency;
+        this.buyCurrency = buyCurrency;
+    }
+
     public String getSourceCurrency() {
         return sourceCurrency;
     }

@@ -1,16 +1,18 @@
 package com.settle.go.model;
 
+import java.math.BigDecimal;
+
 public class Rate {
 
     private String currency;
-    private Double rate;
+    private BigDecimal rate;
 
 
     public Rate() {
 
     }
 
-    public Rate(String currency, Double rate) {
+    public Rate(String currency, BigDecimal rate) {
         this.currency = currency;
         this.rate = rate;
     }
@@ -23,11 +25,11 @@ public class Rate {
         this.currency = currency;
     }
 
-    public Double getRate() {
+    public BigDecimal getRate() {
         return rate;
     }
 
-    public void setRate(Double rate) {
+    public void setRate(BigDecimal rate) {
         this.rate = rate;
     }
 }
