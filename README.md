@@ -19,7 +19,7 @@ $ cd ./api
 $ mvn spring-boot:run  
 ```  
 You can check api url below link.  
-##### API url: http://localhost:8080/swagger-ui.html  or [demo](http://technicalassignmentapi-env.nbfhgqayqz.us-east-1.elasticbeanstalk.com/swagger-ui.html)
+##### API url: http://localhost:8080/swagger-ui.html  or [demo](http://ec2-34-204-1-207.compute-1.amazonaws.com:8080/swagger-ui.html)
   
 #### UI  module build and run  
 ```  
