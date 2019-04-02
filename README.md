@@ -1,6 +1,6 @@
 
   
-## Technical Assignment  
+## react-and-spring-boot
   
 This project includes two part of module, first module is called '**api**', second module is called '**ui**'  
   
